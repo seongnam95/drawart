@@ -1,3 +1,5 @@
+import { ThemeProvider } from '@app/providers';
+
 import { pretendard } from '@shared/assets/fonts';
 import { cn } from '@shared/lib/cn';
 
@@ -24,7 +26,7 @@ export default function RootLayout({
         />
       </head>
       <body className={cn(pretendard.variable, 'font-pretendard antialiased')}>
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
