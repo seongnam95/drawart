@@ -1,18 +1,41 @@
-import type { Config } from "tailwindcss";
+import { fontFamily } from 'tailwindcss/defaultTheme';
+
+import { typography, shadow, zIndex } from './src/shared/styles/theme/plugins';
+
+import type { Config } from 'tailwindcss';
 
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+    colors: {
+      currentColor: 'currentColor',
+      transparent: 'transparent',
+      background: 'var(--background)',
+      surface: 'var(--surface)',
+      input: 'var(--input)',
+      foreground: {
+        DEFAULT: 'var(--foreground)',
+        accent: 'var(--foreground-accent)',
+        muted: 'var(--foreground-muted)',
+      },
+      primary: {
+        DEFAULT: 'var(--primary)',
+        accent: 'var(--primary-accent)',
+        surface: 'var(--primary-surface)',
+        foreground: 'var(--primary-foreground)',
+      },
+      border: {
+        DEFAULT: 'var(--border)',
+        accent: 'var(--border-accent)',
+      },
+      card: {
+        DEFAULT: 'var(--card)',
+        foreground: 'var(--card-foreground)',
       },
     },
+    fontFamily: {
+      pretendard: ['var(--pretendard)', ...fontFamily.sans],
+    },
   },
-  plugins: [],
+  plugins: [typography, shadow, zIndex],
 } satisfies Config;
