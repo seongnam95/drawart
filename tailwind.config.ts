@@ -36,12 +36,6 @@ export default {
     fontFamily: {
       pretendard: ['var(--pretendard)', ...fontFamily.sans],
     },
-    extend: {
-      backgroundImage: {
-        'grid-pattern': 'url("/grid-pattern.svg")',
-        'grid-pattern-dark': 'url("/grid-pattern-dark.svg")',
-      },
-    },
   },
   plugins: [typography, shadow, zIndex],
 } satisfies Config;
