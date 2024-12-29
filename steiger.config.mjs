@@ -9,4 +9,10 @@ export default defineConfig([
       'fsd/public-api': 'off',
     },
   },
+  {
+    files: ['./src/widgets/**'],
+    rules: {
+      'fsd/insignificant-slice': 'off',
+    },
+  },
 ]);
